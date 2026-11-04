@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='utf-8'?>
+<drawables>
+  <bitmap id="DayTop" filename="DayTop.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55FFAA</color>
+      <color>AA5555</color>
+      <color>AAAAAA</color>
+      <color>FFAAAA</color>
+      <color>FFAAFF</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayWall" filename="DayWall.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>00AA55</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FF5500</color>
+      <color>FFAA00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayFloor" filename="DayFloor.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>0055FF</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AAFF</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AA5555</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFAA55</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayLeft0" filename="DayLeft0.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>0055AA</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55AAFF</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayFore0" filename="DayFore0.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayLeft1" filename="DayLeft1.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>0055AA</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55AAFF</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayFore1" filename="DayFore1.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayLeft2" filename="DayLeft2.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>0055AA</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55AAFF</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayFore2" filename="DayFore2.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayLeft3" filename="DayLeft3.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>0055AA</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55AAFF</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayFore3" filename="DayFore3.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayRight0" filename="DayRight0.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayRight1" filename="DayRight1.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayRight2" filename="DayRight2.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="DayRight3" filename="DayRight3.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA55</color>
+      <color>55AAAA</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightTop" filename="NightTop.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555555</color>
+      <color>AAAAAA</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightWall" filename="NightWall.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>5555AA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>AAFFAA</color>
+      <color>FF5500</color>
+      <color>FFAA00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightFloor" filename="NightFloor.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>0055AA</color>
+      <color>0055FF</color>
+      <color>00AAFF</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AAFF</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FF5500</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightLeft0" filename="NightLeft0.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>000055</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>AA5500</color>
+      <color>AA5555</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightFore0" filename="NightFore0.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightLeft1" filename="NightLeft1.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>000055</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>AA5500</color>
+      <color>AA5555</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightFore1" filename="NightFore1.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightLeft2" filename="NightLeft2.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>000055</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>AA5500</color>
+      <color>AA5555</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightFore2" filename="NightFore2.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightLeft3" filename="NightLeft3.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>000055</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>AA5500</color>
+      <color>AA5555</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightFore3" filename="NightFore3.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightRight0" filename="NightRight0.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>AAFF00</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightRight1" filename="NightRight1.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>AAFF00</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightRight2" filename="NightRight2.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>55AA00</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>AAFF00</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="NightRight3" filename="NightRight3.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005500</color>
+      <color>005555</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>AAFF00</color>
+      <color>FFAA00</color>
+      <color>FFAAAA</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="LauncherIcon" filename="LauncherIcon.png" dithering="none" compress="true">
+    <palette disableTransparency="true">
+      <color>000000</color>
+      <color>005555</color>
+      <color>00AA55</color>
+      <color>550000</color>
+      <color>555500</color>
+      <color>555555</color>
+      <color>5555AA</color>
+      <color>55AAAA</color>
+      <color>55AAFF</color>
+      <color>55FFAA</color>
+      <color>AA5500</color>
+      <color>AAAA00</color>
+      <color>AAAAAA</color>
+      <color>FFAA00</color>
+      <color>FFFF00</color>
+      <color>FFFFFF</color>
+    </palette>
+  </bitmap>
+  <bitmap id="ThisIsFine" filename="ThisIsFine.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>555555</color>
+      <color>AAAAAA</color>
+    </palette>
+  </bitmap>
+  <bitmap id="SendCoffee" filename="SendCoffee.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>555555</color>
+      <color>AAAAAA</color>
+    </palette>
+  </bitmap>
+  <bitmap id="Alarm" filename="Alarm.png" dithering="none" compress="false">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>555555</color>
+      <color>AAAAAA</color>
+    </palette>
+  </bitmap>
+  <bitmap id="Receiver" filename="Receiver.png" dithering="none" compress="false">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>555555</color>
+      <color>AAAAAA</color>
+    </palette>
+  </bitmap>
+  <bitmap id="ReceiverOff" filename="ReceiverOff.png" dithering="none" compress="false">
+    <palette disableTransparency="false">
+      <color>000000</color>
+      <color>555555</color>
+      <color>AAAAAA</color>
+    </palette>
+  </bitmap>
+  <bitmap id="Sun" filename="Sun.png" dithering="none" compress="true">
+    <palette disableTransparency="false">
+      <color>555500</color>
+      <color>FFFF55</color>
+    </palette>
+  </bitmap>
+</drawables>

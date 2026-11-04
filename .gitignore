@@ -1,0 +1,10 @@
+bin/
+build/
+gen/
+__pycache__/
+*.iq
+*.prg
+*.prg.debug.xml
+*.der
+*.pem
+developer_key*

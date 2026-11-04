@@ -1,0 +1,6 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {"name": "Run on fēnix 6 Sapphire", "type": "monkeyc", "request": "launch", "device": "fenix6pro"}
+    ]
+}
