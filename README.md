@@ -1,6 +1,6 @@
 # This Is Fine
 
-A Garmin watch face for the **fēnix 6 Sapphire**. Glance at the clock for the time, temperature, and phone connection. Raise your wrist and the dog takes a break from his coffee to assess the situation.
+A Garmin watch face for my Fenix. Glance at the clock for the time, temperature, and phone connection. Raise your wrist and the dog takes a break from his coffee to assess the situation.
 
 ## Read the battery
 
