@@ -8,12 +8,6 @@ module FaceRules {
     const WAKE_MS = 10000;
     const FRAME_MS = 250;
 
-    // Garmin may deliver a wake callback immediately after returning from a
-    // menu. A face already resting on screen can animate on its next wake.
-    function canAnimate(sawSleep as Boolean, visibleFor as Number) as Boolean {
-        return sawSleep || visibleFor >= WAKE_MS;
-    }
-
     function lineAt(ms as Number, charge as Number) as Number {
         if (ms < 0 || ms >= WAKE_MS || (ms / 2000) % 2 == 1) { return CLOCK; }
         return ms >= 4000 && charge <= 10 ? COFFEE : FINE;

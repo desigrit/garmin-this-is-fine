@@ -110,8 +110,10 @@
   <bitmap id="DayFore1" filename="DayFore1.png" dithering="none" compress="true">
     <palette disableTransparency="false">
       <color>000000</color>
+      <color>005555</color>
       <color>550000</color>
       <color>555500</color>
+      <color>555555</color>
       <color>AA5500</color>
       <color>AAAA00</color>
       <color>FFAA00</color>
@@ -172,6 +174,7 @@
   <bitmap id="DayFore3" filename="DayFore3.png" dithering="none" compress="true">
     <palette disableTransparency="false">
       <color>000000</color>
+      <color>005555</color>
       <color>550000</color>
       <color>555500</color>
       <color>AA5500</color>
@@ -185,6 +188,7 @@
       <color>000000</color>
       <color>005500</color>
       <color>005555</color>
+      <color>00AA55</color>
       <color>550000</color>
       <color>555500</color>
       <color>555555</color>
@@ -195,7 +199,6 @@
       <color>AAAA00</color>
       <color>AAAAAA</color>
       <color>FFAA00</color>
-      <color>FFAAAA</color>
       <color>FFFF00</color>
       <color>FFFFFF</color>
     </palette>
@@ -205,6 +208,7 @@
       <color>000000</color>
       <color>005500</color>
       <color>005555</color>
+      <color>00AA55</color>
       <color>550000</color>
       <color>555500</color>
       <color>555555</color>
@@ -215,7 +219,6 @@
       <color>AAAA00</color>
       <color>AAAAAA</color>
       <color>FFAA00</color>
-      <color>FFAAAA</color>
       <color>FFFF00</color>
       <color>FFFFFF</color>
     </palette>
@@ -225,6 +228,7 @@
       <color>000000</color>
       <color>005500</color>
       <color>005555</color>
+      <color>00AA55</color>
       <color>550000</color>
       <color>555500</color>
       <color>555555</color>
@@ -235,7 +239,6 @@
       <color>AAAA00</color>
       <color>AAAAAA</color>
       <color>FFAA00</color>
-      <color>FFAAAA</color>
       <color>FFFF00</color>
       <color>FFFFFF</color>
     </palette>
@@ -245,6 +248,7 @@
       <color>000000</color>
       <color>005500</color>
       <color>005555</color>
+      <color>00AA55</color>
       <color>550000</color>
       <color>555500</color>
       <color>555555</color>
@@ -255,7 +259,6 @@
       <color>AAAA00</color>
       <color>AAAAAA</color>
       <color>FFAA00</color>
-      <color>FFAAAA</color>
       <color>FFFF00</color>
       <color>FFFFFF</color>
     </palette>
@@ -464,7 +467,6 @@
       <color>550000</color>
       <color>555500</color>
       <color>555555</color>
-      <color>55AA00</color>
       <color>AA5500</color>
       <color>AAAA00</color>
       <color>AAAAAA</color>

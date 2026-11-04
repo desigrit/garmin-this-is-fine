@@ -4,7 +4,7 @@ from pathlib import Path
 import json
 import math
 import xml.etree.ElementTree as ET
-from PIL import Image, ImageDraw
+from PIL import Image, ImageChops, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 ART, OUT, FONTS = ROOT / "art", ROOT / "resources/drawables", ROOT / "resources/fonts"
@@ -131,9 +131,9 @@ def build_marks():
                  ("MOON_R", moon_r), ("HALF_WIDTHS", halfwidths)]) + "}\n", encoding="utf8")
 
 
-# Strokes for the six remaining clock digits.
-# Coordinates are in a 20 by 28 px pen grid. Each tuple is one cubic Bezier.
+# Pen strokes in a 20 by 28 px grid. Each tuple is one cubic Bezier.
 STROKES = {
+    "1": [[(6,8),(8,6,10,4,12,3),(12,9,11.5,21,12,25)]],
     "2": [[(3,7),(6,0,17,1,17,8),(17,13,6,19,3,25),(6,25,13,25,17,25)]],
     "4": [[(13,3),(10,7,6,12,2,18),(7,18,12,18,18,18)],[(14,3),(14,9,14,20,14,25)]],
     "5": [[(16,3),(12,3,7,3,5,3),(5,7,5,10,4,13),(9,10,17,11,17,18),(18,26,8,28,3,23)]],
@@ -167,26 +167,40 @@ def clock_glyphs():
     day = Image.open(ART / "day-clock.png").getchannel("A")
     night = Image.open(ART / "night-clock.png").getchannel("A")
     glyphs = {c: pen(paths) for c, paths in STROKES.items()}
-    for c, sample, x, x2 in [("8",day,0,38), (":",day,41,57), ("0",day,59,95),
-                              ("1",night,0,28), ("3",night,115,148)]:
+    for c, sample, x, x2 in [("8",day,0,38), ("0",day,59,95), ("3",night,115,148)]:
         glyphs[c] = sample.crop((x, 0, x2, sample.height))
     return {c: im.crop(im.point(lambda v: 255 if v >= 40 else 0).getbbox()) for c, im in glyphs.items()}
 
 
-TINY = {
-    "0": ("0110","1001","1001","1001","1001","1001","0110"),
-    "1": ("0010","0110","0010","0010","0010","0010","0111"),
-    "2": ("0110","1001","0001","0010","0100","1000","1111"),
-    "3": ("1110","0001","0001","0110","0001","0001","1110"),
-    "4": ("0010","0110","1010","1010","1111","0010","0010"),
-    "5": ("1111","1000","1000","1110","0001","0001","1110"),
-    "6": ("0110","1000","1000","1110","1001","1001","0110"),
-    "7": ("1111","0001","0010","0010","0100","0100","0100"),
-    "8": ("0110","1001","1001","0110","1001","1001","0110"),
-    "9": ("0110","1001","1001","0111","0001","0001","0110"),
-    "-": ("000","000","000","111","000","000","000"),
-    "°": ("010","101","010","000","000","000","000"),
-}
+def clock_mask(digit, master, width, height):
+    # Lighten the stroke at its final screen size. Overscan keeps the outer
+    # dimensions steady while opening up the counters of 0, 6, 8 and 9.
+    scale = 6
+    ink_width = round(height * .41) if digit == "1" else width
+    w, h = ink_width * scale, height * scale
+    pad = 2 * scale
+    spread = 5  # five sixths of one display pixel on each side
+    canvas = Image.new("L", (w + 2*pad, h + 2*pad))
+    enlarged = master.resize((w + 2*spread, h + 2*spread), LANCZOS)
+    canvas.paste(enlarged, (pad-spread, pad-spread))
+    # Use a round nib so diagonals stay as legible as vertical stems.
+    thinned = canvas
+    for dx, dy in [(5,0),(-5,0),(0,5),(0,-5),(4,4),(4,-4),(-4,4),(-4,-4)]:
+        thinned = ImageChops.darker(thinned, ImageChops.offset(canvas, dx, dy))
+    ink = thinned.crop((pad,pad,pad+w,pad+h)).resize((ink_width,height), LANCZOS)
+    cell = Image.new("L",(width,height))
+    cell.paste(ink,((width-ink_width)//2,0))
+    return cell
+
+
+def clock_colon(height):
+    scale = 8
+    mask = Image.new("L",(5*scale,height*scale))
+    pen = ImageDraw.Draw(mask)
+    for center in (height*.29, height*.71):
+        pen.ellipse(((2.5-1.8)*scale,(center-1.8)*scale,
+                     (2.5+1.8)*scale,(center+1.8)*scale),fill=255)
+    return mask.resize((5,height), LANCZOS)
 
 
 def bmfont(name, height, entries):
@@ -211,18 +225,21 @@ def build_fonts():
     for name, height, normal_w, gap in [("ClockWide", 28, 20, 5), ("ClockCompact", 26, 18, 3)]:
         entries = []
         for c, im in glyphs.items():
-            w = 5 if c == ":" else normal_w-3 if c == "1" else normal_w
+            w = normal_w-3 if c == "1" else normal_w
             if c == "0" and name == "ClockCompact":
                 w += 1
-            h = round(height*.60) if c == ":" else height
-            entries.append((c, im.resize((w,h), LANCZOS), (height-h)//2, w+gap))
+            entries.append((c, clock_mask(c, im, w, height), 0, w+gap))
+        entries.append((":", clock_colon(height), 0, 5+gap))
         bmfont(name, height, entries)
     entries = []
-    for c, rows in TINY.items():
-        mask = Image.new("L",(len(rows[0]),len(rows)))
-        mask.putdata([255 if v=="1" else 0 for row in rows for v in row])
-        entries.append((c, mask, 0, mask.width+1))
-    bmfont("WeatherSmall", 7, entries)
+    for c, master in glyphs.items():
+        width = 5 if c == "1" else 7
+        entries.append((c, master.resize((width,11),LANCZOS), 0, width+1))
+    minus = Image.new("L",(4,1),255)
+    degree = Image.new("L",(32,32))
+    ImageDraw.Draw(degree).ellipse((1,1,30,30), outline=255, width=8)
+    entries.extend([("-",minus,5,5),("°",degree.resize((4,4),LANCZOS),0,5)])
+    bmfont("WeatherSmall", 11, entries)
 
 
 if __name__ == "__main__":

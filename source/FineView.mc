@@ -13,8 +13,7 @@ class FineView extends WatchUi.WatchFace {
     private var _lastRead as Number = 0;
     private var _readIn as Number = 0;
     private var _visible as Boolean = false;
-    private var _shownAt as Number = 0;
-    private var _sawSleep as Boolean = false;
+    private var _handledWake as Boolean = false;
     private var _refresh as Boolean = true;
 
     function initialize() {
@@ -25,18 +24,16 @@ class FineView extends WatchUi.WatchFace {
 
     function onShow() as Void {
         _visible = true;
-        _shownAt = System.getTimer();
-        _sawSleep = false;
         _refresh = true;
     }
 
     function onExitSleep() as Void {
-        if (!_visible || _wakeTimer != null) { return; }
-        var now = System.getTimer();
-        if (!FaceRules.canAnimate(_sawSleep, now-_shownAt)) { return; }
-        _sawSleep = false;
+        // Garmin supplies one wake callback for all high-power transitions.
+        // The fēnix 6 does not deliver a separate backlight or LIGHT-key event.
+        if (!_visible || _handledWake) { return; }
+        _handledWake = true;
         _refresh = true;
-        _started = now;
+        _started = System.getTimer();
         _wakeTimer = new Timer.Timer();
         _wakeTimer.start(method(:tick), FaceRules.FRAME_MS, true);
         WatchUi.requestUpdate();
@@ -58,14 +55,14 @@ class FineView extends WatchUi.WatchFace {
 
     function onEnterSleep() as Void {
         stopWake();
-        _sawSleep = _visible;
+        _handledWake = false;
         _refresh = true;
         if (_visible) { WatchUi.requestUpdate(); }
     }
 
     function onHide() as Void {
         _visible = false;
-        _sawSleep = false;
+        _handledWake = false;
         stopWake();
         _scene.release();
     }

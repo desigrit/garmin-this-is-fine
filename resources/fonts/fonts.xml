@@ -1,5 +1,5 @@
 <fonts>
     <font id="ClockWide" filename="ClockWide.fnt" antialias="true"/>
     <font id="ClockCompact" filename="ClockCompact.fnt" antialias="true"/>
-    <font id="WeatherSmall" filename="WeatherSmall.fnt"/>
+    <font id="WeatherSmall" filename="WeatherSmall.fnt" antialias="true"/>
 </fonts>

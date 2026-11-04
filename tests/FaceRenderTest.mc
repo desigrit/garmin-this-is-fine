@@ -12,18 +12,19 @@ function renderClockAndWakeFrames(logger as Test.Logger) as Boolean {
     var dc = bitmap.getDc();
     var scene = new FineScene();
     var data = new FaceData();
-    data.weather = "64°";
     data.charge = 10;
 
     for (var theme = 0; theme < 2; theme += 1) {
         data.night = (theme == 1);
-        data.clock = data.night ? "22:03" : "8:08";
+        data.clock = data.night ? "22:03" : "1:09";
+        data.weather = data.night ? "-40°" : "12°";
         data.alarm = true;
         data.phone = true;
         scene.draw(dc, data, 0, FaceRules.CLOCK);
 
         data.alarm = false;
         data.phone = false;
+        data.weather = "--°";
         scene.draw(dc, data, 0, FaceRules.CLOCK);
         for (var pose = 0; pose < 4; pose += 1) {
             scene.draw(dc, data, pose, FaceRules.FINE);

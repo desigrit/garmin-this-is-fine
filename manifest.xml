@@ -2,7 +2,7 @@
 <iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="1">
     <iq:application id="65af93c77c4244c99a8a20d17830a4cb" type="watchface"
         name="@Strings.AppName" entry="FineApp" launcherIcon="@Drawables.LauncherIcon"
-        minSdkVersion="3.3.0" version="1.0.1">
+        minSdkVersion="3.3.0" version="1.0.2">
         <iq:products><iq:product id="fenix6pro"/></iq:products>
         <iq:permissions><iq:uses-permission id="Positioning"/></iq:permissions>
         <iq:languages><iq:language>eng</iq:language></iq:languages>

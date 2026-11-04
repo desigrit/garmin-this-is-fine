@@ -118,6 +118,27 @@ def verify():
             prev=n
         assert sky("Night",p,100).crop((62,95,82,115)).tobytes() == sky("Night",0,100).crop((62,95,82,115)).tobytes()
 
+    # Track the tip next to the mug and keep the window, dog and mug still.
+    tips = []
+    for pose in range(4):
+        frame = room("Day", pose)
+        front = frame.crop((193,94,215,125)).convert("RGB")
+        tips.append(min(i // front.width for i,(red,green,blue) in enumerate(front.get_flattened_data())
+                        if red >= 170 and green >= 85 and blue == 0))
+        for fixed in ((55,92,97,98), (106,119,187,199), (198,151,229,177)):
+            assert frame.crop(fixed).tobytes() == room("Day",0).crop(fixed).tobytes()
+    assert max(tips)-min(tips)>=8, tips
+
+    # At watch resolution even a signed temperature must clear both the clock
+    # and the status row. Two-digit readings should use the full larger height.
+    for reading in ("12°", "64°", "-40°", "105°", "-105°", "--°"):
+        im = Image.new("RGBA",(260,90),"white")
+        text(im,"WeatherSmall",reading,178,45)
+        left,top,right,bottom = im.convert("L").point(lambda v: 255 if v<128 else 0).getbbox()
+        assert left>=160 and right<=198 and top>=37 and bottom<=52, (reading,left,top,right,bottom)
+        if reading != "--°":
+            assert bottom-top >= 10, (reading, bottom-top)
+
     # Every real clock label must fit to the left of the status block.
     for hour in range(24):
         for minute in range(60):
