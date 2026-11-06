@@ -61,7 +61,7 @@ def sky(mode, pose, charge):
 @lru_cache(maxsize=None)
 def get_font(name):
     fnt = (FONTS/(name+".fnt")).read_text()
-    pix = Image.open(FONTS/(name+".png")).convert("RGBA").getchannel("A")
+    pix = Image.open(FONTS/(name+".png")).convert("L")
     chars = {}
     for line in fnt.splitlines():
         if not line.startswith("char "): continue
@@ -94,6 +94,14 @@ def draw_face(mode, pose, charge, clock, temp, alarm, phone, line=None):
 
 
 def verify():
+    # Garmin consumes font coverage from grayscale, not the alpha channel.
+    # Require midtones so the compiler can retain smoothed stroke edges.
+    for name in ("ClockWide", "ClockCompact", "WeatherSmall"):
+        page = Image.open(FONTS/(name+".png"))
+        assert page.mode == "L", (name, "font coverage must be grayscale, not alpha")
+        assert page.getextrema() == (0, 255), (name, "missing ink or background")
+        assert sum(page.histogram()[32:224]) > 0, (name, "missing antialiased edges")
+
     # Test the actual pixels exposed above the four native occlusion bitmaps.
     for p in range(4):
         base=room("Day",p).convert("RGB")

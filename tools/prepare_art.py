@@ -204,12 +204,13 @@ def clock_colon(height):
 
 
 def bmfont(name, height, entries):
-    page = Image.new("RGBA", (256, 32), (255,255,255,0))
+    # Garmin reads glyph coverage from grayscale intensity, not PNG alpha.
+    # White RGBA glyphs with alpha-only edges become ragged solid ink on MIP.
+    page = Image.new("L", (256, 32), 0)
     lines = []; cursor = 0
     for ch, mask, offset, advance in sorted(entries):
         w, h = mask.size
-        glyph = Image.new("RGBA", mask.size, (255,255,255,255)); glyph.putalpha(mask)
-        page.paste(glyph, (cursor, 0))
+        page.paste(mask, (cursor, 0))
         lines.append(f"char id={ord(ch)} x={cursor} y=0 width={w} height={h} xoffset=0 yoffset={offset} xadvance={advance} page=0 chnl=15")
         cursor += w+1
     assert cursor <= page.width
