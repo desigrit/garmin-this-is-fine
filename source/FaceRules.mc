@@ -9,8 +9,8 @@ module FaceRules {
     const FRAME_MS = 250;
 
     function lineAt(ms as Number, charge as Number) as Number {
-        if (ms < 0 || ms >= WAKE_MS || (ms / 2000) % 2 == 1) { return CLOCK; }
-        return ms >= 4000 && charge <= 10 ? COFFEE : FINE;
+        if (ms < 0 || ms >= WAKE_MS || (ms / 2000) % 2 == 0) { return CLOCK; }
+        return ms >= 6000 && charge <= 10 ? COFFEE : FINE;
     }
 
     // Return the center row, or -1 if the disk has set. Check the 6% rim in

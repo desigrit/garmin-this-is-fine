@@ -4,8 +4,8 @@ import Toybox.Test;
 (:test)
 function wakeSequence(logger as Test.Logger) as Boolean {
     var times = [-1, 0, 1999, 2000, 3999, 4000, 5999, 6000, 7999, 8000, 9999, 10000, 15000];
-    var low = [0, 1, 1, 0, 0, 2, 2, 0, 0, 2, 2, 0, 0];
-    var normal = [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0];
+    var low = [0, 0, 0, 1, 1, 0, 0, 2, 2, 0, 0, 0, 0];
+    var normal = [0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0];
     for (var i=0; i<times.size(); i+=1) {
         Test.assertEqual(low[i], FaceRules.lineAt(times[i],10));
         Test.assertEqual(normal[i], FaceRules.lineAt(times[i],11));

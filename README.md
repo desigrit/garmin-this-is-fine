@@ -16,7 +16,7 @@ By day, the last sliver of sun is still visible at 6% and disappears at 5%. At n
 
 *Raise your wrist to see the protagonist's incident report alternating with the time (with a bonus incident report on low battery)*
 
-The dog speaks at **0, 4, and 8 seconds**. The clock returns at **2 and 6 seconds**, then stays on at **10 seconds** as the fire goes still. The opening line is always **THIS IS FINE**. At 10% battery or below, the later reports read **SEND COFFEE**. An earlier sleep signal ends the animation immediately.
+The clock appears immediately when you raise your wrist. The dog speaks at **2 and 6 seconds**, with the clock returning at **4 and 8 seconds**. The fire goes still at **10 seconds**, leaving the time visible. The first report is always **THIS IS FINE**. At 10% battery or below, the second report reads **SEND COFFEE**. An earlier sleep signal ends the animation immediately.
 
 The flames rise and sway at four frames per second. The face uses Garmin’s wake notification for the same sequence whenever the system wakes it. On the fēnix 6, the LIGHT button can illuminate the display without sending that notification.
 
